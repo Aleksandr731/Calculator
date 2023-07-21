@@ -20,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping(path = "/calculator/plus")
-    public int plus(@RequestParam("sum") int num1, int num2) {
+    public int plus(@RequestParam() int num1, int num2) {
         return calculator.plus(num1, num2);
     }
 }
