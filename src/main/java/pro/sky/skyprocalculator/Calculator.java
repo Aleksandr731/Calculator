@@ -23,7 +23,7 @@ public abstract class Calculator implements CalculatorService {
     public String divide(double num1, double num2) {
         double result = num1 / num2;
         if (num1 == 0 || num2 == 0) {
-            return "Ошибка, на 0 делить нельзя";
+            return "Ошибка, делить на ноль нельзя";
         } else return num1 + " / " + num2 + " = " + result;
     }
 }
