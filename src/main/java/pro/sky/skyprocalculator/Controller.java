@@ -8,33 +8,34 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/calculator")
 @RestController
 public class Controller {
-    private final HelloService helloService;
     private final Calculator calculator;
 
-    public Controller(HelloService helloService, Calculator calculator) {
-        this.helloService = helloService;
+    public Controller(Calculator calculator) {
         this.calculator = calculator;
     }
 
     @GetMapping
     public String hello() {
-        return helloService.hello();
+        return HelloService.hello();
     }
 
     @GetMapping(path = "/plus")
-    public String plus(@RequestParam int num1,@RequestParam int num2) {
+    public String plus(@RequestParam int num1, @RequestParam int num2) {
         return calculator.plus(num1, num2);
     }
+
     @GetMapping(path = "/minus")
-    public String minus(@RequestParam int num1,@RequestParam int num2) {
+    public String minus(@RequestParam int num1, @RequestParam int num2) {
         return calculator.minus(num1, num2);
     }
+
     @GetMapping(path = "/multiply")
-    public String multiply(@RequestParam int num1,@RequestParam int num2) {
+    public String multiply(@RequestParam int num1, @RequestParam int num2) {
         return calculator.multiply(num1, num2);
     }
+
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam double num1,@RequestParam double num2) {
+    public String divide(@RequestParam double num1, @RequestParam double num2) {
         return calculator.divide(num1, num2);
     }
 }

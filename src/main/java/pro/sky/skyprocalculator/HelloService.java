@@ -3,10 +3,10 @@ package pro.sky.skyprocalculator;
 import org.springframework.stereotype.Service;
 
 @Service
-public abstract class HelloService implements CalculatorService {
+public interface HelloService {
 
-    @Override
-    public String hello() {
+
+    static String hello() {
         return "Добро пожаловать в калькулятор";
     }
 
