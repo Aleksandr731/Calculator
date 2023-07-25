@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pro.sky</groupId>
-	<artifactId>skypro-calculator</artifactId>
+	<artifactId>skypro-calculatorServiceImpl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>skypro-calculator</name>
 	<description>Demo project for Spring Boot</description>
