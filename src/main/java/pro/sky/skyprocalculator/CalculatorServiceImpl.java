@@ -1,32 +1,28 @@
 package pro.sky.skyprocalculator;
-
 import org.springframework.stereotype.Service;
+import pro.sky.skyprocalculator.exception.DivideException;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
     @Override
-    public String plus(int num1, int num2) {
-        int result = num1 + num2;
-        return num1 + " + " + num2 + " = " + result;
+    public long plus(int num1, int num2) {
+        return (long) num1 + num2;
     }
 
     @Override
-    public String minus(int num1, int num2) {
-        int result = num1 - num2;
-        return num1 + " - " + num2 + " = " + result;
+    public long minus(int num1, int num2) {
+        return (long) num1 - num2;
     }
 
     @Override
-    public String multiply(int num1, int num2) {
-        int result = num1 * num2;
-        return num1 + " * " + num2 + " = " + result;
+    public long multiply(int num1, int num2) {
+        return (long) num1 * num2;
     }
 
     @Override
-    public String divide(double num1, double num2) {
-        double result = num1 / num2;
+    public double divide(double num1, double num2){
         if (num1 == 0 || num2 == 0) {
-            return "Ошибка, делить на ноль нельзя";
-        } else return num1 + " / " + num2 + " = " + result;
+            throw new DivideException("Деление на 0 не допустимо");
+        } else return (double) num1 / num2;
     }
 }
