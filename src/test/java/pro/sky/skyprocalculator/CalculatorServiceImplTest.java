@@ -31,8 +31,8 @@ class CalculatorServiceImplTest {
 
     @Test
     void minus_shouldReturnPositiveNumWhenNum1AndNum2ArePositive() {
-        int num1 = 1;
-        int num2 = 2;
+        int num1 = 2;
+        int num2 = 1;
 
         long result = calculatorService.minus(num1,num2);
         assertEquals(num1 - num2,result);
@@ -75,7 +75,7 @@ class CalculatorServiceImplTest {
         }
 
     @Test
-    void divide_shouldReturnNegativeNumWhenNum1IsPositiveAndNum2IsNegativeAndNum2BiggerThenNum1() {
+    void divide_shouldReturnNegativeNumWhenNum1IsPositiveAndNum2IsNegativeAndNum1BiggerThenNum1() {
         int num1 = 5;
         int num2 = -2;
 
@@ -85,8 +85,8 @@ class CalculatorServiceImplTest {
 
     @Test
     void divide_shouldThrowExceptionWhenNum2Is0() {
-        int num1 = 0;
-        int num2 = 1;
+        int num1 = 1;
+        int num2 = 0;
 
         DivideException result = assertThrows(DivideException.class,
                 () -> calculatorService.divide(num1, num2));
